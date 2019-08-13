@@ -19,7 +19,7 @@ class ViewController: UIViewController {
         "What is cognac made from?"
     ]
     
-    let answer: [String] = [
+    let answers: [String] = [
         "14",
         "Montpelier",
         "Grapes"
@@ -34,11 +34,19 @@ class ViewController: UIViewController {
     }
 
     @IBAction func showNextQuestion(_ sender: UIButton) {
+        currentQuestionIndex += 1
+        if currentQuestionIndex == questions.count {
+            currentQuestionIndex = 0
+        }
         
+        let question: String = questions[currentQuestionIndex]
+        questionLabel.text = question
+        answerLabel.text = "???"
     }
     
     @IBAction func showAnswer(_ sender: UIButton) {
-        
+        let answer: String = answers[currentQuestionIndex]
+        answerLabel.text = answer
     }
     
 }
