@@ -25,7 +25,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="???" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WyP-1q-dWL">
-                                <rect key="frame" x="147" y="71" width="25" height="21"/>
+                                <rect key="frame" x="147.5" y="71" width="25" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -56,7 +56,7 @@
                             <constraint firstItem="xVp-kt-tpg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="14Z-r9-4Aa"/>
                             <constraint firstItem="EKy-T3-yJ3" firstAttribute="centerX" secondItem="ZWg-K6-UKW" secondAttribute="centerX" id="297-hk-Ajo"/>
                             <constraint firstItem="WyP-1q-dWL" firstAttribute="top" secondItem="xVp-kt-tpg" secondAttribute="top" constant="-1" id="3h3-6m-OdL"/>
-                            <constraint firstItem="xVp-kt-tpg" firstAttribute="centerX" secondItem="ZWg-K6-UKW" secondAttribute="centerX" id="Nxv-mI-WDS"/>
+                            <constraint firstItem="ZWg-K6-UKW" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="BGz-eU-UqT"/>
                             <constraint firstItem="xVp-kt-tpg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="52" id="Tg9-MT-uPq"/>
                             <constraint firstItem="TVt-VP-c3d" firstAttribute="top" secondItem="ZWg-K6-UKW" secondAttribute="bottom" constant="143" id="aCb-pw-GmT"/>
                             <constraint firstItem="EKy-T3-yJ3" firstAttribute="top" secondItem="TVt-VP-c3d" secondAttribute="bottom" constant="8" id="qm6-2Y-XQa"/>
@@ -69,7 +69,9 @@
                     <connections>
                         <outlet property="answerLabel" destination="TVt-VP-c3d" id="eeF-h3-msY"/>
                         <outlet property="currentQuestionLabel" destination="xVp-kt-tpg" id="fwQ-xN-CSi"/>
+                        <outlet property="currentQuestionLabelCenterXConstraint" destination="14Z-r9-4Aa" id="Zwa-ll-Hmr"/>
                         <outlet property="nextQuestionLabel" destination="WyP-1q-dWL" id="Prm-Wl-DNx"/>
+                        <outlet property="nextQuestionLabelCenterXConstraint" destination="zah-3w-hbq" id="S9Z-eR-jia"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
