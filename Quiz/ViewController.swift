@@ -10,7 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet var questionLabel: UILabel!
+    @IBOutlet var currentQuestionLabel: UILabel!
+    @IBOutlet var nextQuestionLabel: UILabel!
     @IBOutlet var answerLabel: UILabel!
     
     let questions: [String] = [
@@ -26,18 +27,18 @@ class ViewController: UIViewController {
     ]
     
     var currentQuestionIndex: Int = 0
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        currentQuestionLabel.text = questions[currentQuestionIndex]
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         // Set the label's initial alpha
-        questionLabel.alpha = 0
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        questionLabel.text = questions[currentQuestionIndex]
+        nextQuestionLabel.alpha = 0
     }
 
     @IBAction func showNextQuestion(_ sender: UIButton) {
@@ -47,7 +48,7 @@ class ViewController: UIViewController {
         }
         
         let question: String = questions[currentQuestionIndex]
-        questionLabel.text = question
+        nextQuestionLabel.text = question
         answerLabel.text = "???"
         
         animateLabelTransitions()
@@ -60,8 +61,16 @@ class ViewController: UIViewController {
     
     func animateLabelTransitions() {
         // Animate the alpha
-        UIView.animate(withDuration: 0.5, animations: {
-            self.questionLabel.alpha = 1
+        UIView.animate(withDuration: 0.5,
+            delay: 0,
+            options: [],
+            animations: {
+                self.currentQuestionLabel.alpha = 0
+                self.nextQuestionLabel.alpha = 1
+        },
+            completion: { _ in
+                swap(&self.currentQuestionLabel,
+                     &self.nextQuestionLabel)
         })
     }
     
